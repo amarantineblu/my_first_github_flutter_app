@@ -79,12 +79,12 @@ flutter:
   fonts:
     - family: SUSE
       fonts:
-        - asset: fonts/SUSE-VariableFont_wght.ttf
+        - asset: assets/fonts/SUSE-VariableFont_wght.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
     - family: Poppins
       fonts:
-        - asset: fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

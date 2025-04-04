@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       // title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: "Poppins",
+        fontFamily: 'Poppins',
         fontFamilyFallback: ["SUSE"],
         // This is the theme of your application.
         //
