@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, sized_box_for_whitespace
 
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_application_1/util/first_page_card.dart';
 import 'package:flutter_application_1/widgets/first_page_card.dart';
 import 'package:flutter_application_1/widgets/first_page_listile.dart';
 
@@ -180,9 +180,46 @@ class FirstPage extends StatelessWidget {
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                       children: [
                         FirstPageListile(
-                          image: 'pexels-dariuskrs-2609106.jpg',
+                          image: Image.asset(
+                            'images/pexels-ylanite-koppens-1906435.jpg',
+                            fit: BoxFit.cover,
+                            width: 100,
+                            height: 100,
+                          ),
+                          bigText: 'Salvador',
+                          smallText: 'Brazil',
+                        ),
+                        FirstPageListile(
+                          image: Image.asset(
+                            'images/pexels-ylanite-koppens-1906435.jpg',
+                            fit: BoxFit.cover,
+                            width: 100,
+                            height: 100,
+                          ),
+                          bigText: 'Salvador',
+                          smallText: 'Brazil',
+                        ),
+                        FirstPageListile(
+                          image: Image.asset(
+                            'images/pexels-vo-thuy-tien-2536967.jpg',
+                            fit: BoxFit.cover,
+                            width: 100,
+                            height: 100,
+                          ),
+                          bigText: 'Salvador',
+                          smallText: 'Brazil',
+                        ),
+                        FirstPageListile(
+                          image: Image.asset(
+                            'images/pexels-ylanite-koppens-1906435.jpg',
+                            fit: BoxFit.cover,
+                            width: 100,
+                            height: 100,
+                          ),
                           bigText: 'Salvador',
                           smallText: 'Brazil',
                         ),
@@ -195,9 +232,16 @@ class FirstPage extends StatelessWidget {
           ),
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(items: [
-
-      // ]),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        color: Colors.deepPurple,
+        items: [
+          Icon(Icons.home_filled, size: 25, color: Colors.white),
+          Icon(Icons.flash_auto_rounded, size: 25, color: Colors.white),
+          Icon(Icons.verified_user_rounded, size: 25, color: Colors.white),
+          Icon(Icons.heart_broken_rounded, size: 25, color: Colors.white),
+        ],
+      ),
     );
   }
 }

@@ -1,19 +1,25 @@
-// ignore_for_file: avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_string_escapes, deprecated_member_use
+// ignore_for_file: avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_string_escapes, deprecated_member_use, unused_import, sort_child_properties_last, no_leading_underscores_for_local_identifiers
 
 // import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
 
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-// import 'package:flutter_application_1/pages/first_page.dart';
+import 'package:slide_to_act/slide_to_act.dart';
+import 'package:flutter_application_1/pages/first_page.dart';
 
 final textDecorationNone = 'none';
 final fontFamily = 'Poppins';
 final textDecoration = TextDecoration.none;
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -119,56 +125,29 @@ class MyHomePage extends StatelessWidget {
           ),
 
           //The button below
-          Positioned.fill(
-            bottom: 10,
-            top: MediaQuery.of(context).size.height * .7,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height * .3,
-                  width: MediaQuery.of(context).size.height * .08,
+          Builder(
+            builder: (context) {
+              final GlobalKey<SlideActionState> _key = GlobalKey();
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SlideAction(
+                  sliderRotate: false,
 
-                  // color: Colors.white,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      colors: [
-                        Colors.white.withOpacity(.8),
-                        Colors.white.withOpacity(.2),
-                      ],
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: 70,
-                  child: Icon(Icons.keyboard_double_arrow_up_rounded, size: 25),
-                ),
-                Positioned(
-                  bottom: 0,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: CircleBorder(),
-                      padding: EdgeInsets.all(10),
-                    ),
+                  key: _key,
+                  onSubmit: () {
+                    // Future.delayed(
+                    //   Duration(seconds: 1),
+                    //   () => _key.currentState!.reset(),
+                    // );
+                    Navigator.pushNamed(context, '/first_page');
+                  },
+                  alignment: Alignment.centerRight,
 
-                    // style: BorderRadius.circular(30),
-                    onPressed:
-                        () => {Navigator.pushNamed(context, "/first_page")},
-                    child: Text(
-                      'Go',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w900,
-                        fontSize: 30,
-                      ),
-                    ),
-                  ),
+                  child: Icon(Icons.double_arrow_rounded, color: Colors.white),
+                  sliderButtonIcon: Text('Go'),
                 ),
-              ],
-            ),
+              );
+            },
           ),
         ],
       ),
