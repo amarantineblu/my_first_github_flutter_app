@@ -6,7 +6,14 @@ import 'package:flutter_application_1/widgets/first_page_card.dart';
 import 'package:flutter_application_1/widgets/first_page_listile.dart';
 
 class FirstPage extends StatelessWidget {
-  const FirstPage({super.key});
+  FirstPage({super.key});
+
+  final List<String> _firstTileDetails = [
+    'images/pexels-ylanite-koppens-1906435.jpg',
+    'images/pexels-ylanite-koppens-1906435.jpg',
+    'images/pexels-vo-thuy-tien-2536967.jpg',
+    'images/pexels-ylanite-koppens-1906435.jpg',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -39,197 +46,162 @@ class FirstPage extends StatelessWidget {
           SizedBox(width: 10),
         ],
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Padding(
-          padding: const EdgeInsets.only(left: 15.0),
-          child: Column(
-            children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  // scrollDirection: Axis.horizontal,
-                  children: [
-                    Card(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 5,
-                        ),
-                        child: Text(
-                          'Jungle',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 5,
-                      ),
-                      child: Text(
-                        'Beach',
-                        style: TextStyle(fontWeight: FontWeight.w900),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 5,
-                      ),
-                      child: Text(
-                        'Mountain',
-                        style: TextStyle(fontWeight: FontWeight.w900),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 5,
-                      ),
-                      child: Text(
-                        'WaterFall',
-                        style: TextStyle(fontWeight: FontWeight.w900),
-                      ),
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 5,
-                      ),
-                      child: Text(
-                        'Valleys',
-                        style: TextStyle(fontWeight: FontWeight.w900),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 5,
-                      ),
-                      child: Text(
-                        'Ravines',
-                        style: TextStyle(fontWeight: FontWeight.w900),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 5,
-                      ),
-                      child: Text(
-                        'Streams',
-                        style: TextStyle(fontWeight: FontWeight.w900),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-
-                child: Row(
-                  children: [
-                    FirstPageCard(
-                      image: 'pexels-trang-doan-1092730.jpg',
-                      bigText: 'La Casta',
-                      smallText: 'Peru, South America',
-                    ),
-                    FirstPageCard(
-                      image: 'pexels-vo-thuy-tien-2536967.jpg',
-                      bigText: 'Rio De Janiero',
-                      smallText: 'Brazil, South America',
-                    ),
-                    FirstPageCard(
-                      image: 'pexels-william-choquette-2641886.jpg',
-                      bigText: 'Rio De Janiero',
-                      smallText: 'Brazil, South America',
-                    ),
-                    FirstPageCard(
-                      image: 'pexels-ylanite-koppens-1906435.jpg',
-                      bigText: 'Rio De Janiero',
-                      smallText: 'Brazil, South America',
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 10),
-              Column(
+      body: Padding(
+        padding: const EdgeInsets.only(left: 15.0),
+        child: ListView(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                // scrollDirection: Axis.horizontal,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Top Decoration',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w900,
-                          ),
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 5,
+                      ),
+                      child: Text(
+                        'Jungle',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 20,
                         ),
-                        Container(child: Icon(Icons.message)),
-                      ],
+                      ),
                     ),
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 5,
+                    ),
+                    child: Text(
+                      'Beach',
+                      style: TextStyle(fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 5,
+                    ),
+                    child: Text(
+                      'Mountain',
+                      style: TextStyle(fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 5,
+                    ),
+                    child: Text(
+                      'WaterFall',
+                      style: TextStyle(fontWeight: FontWeight.w900),
+                    ),
+                  ),
 
-                      children: [
-                        FirstPageListile(
-                          image: Image.asset(
-                            'images/pexels-ylanite-koppens-1906435.jpg',
-                            fit: BoxFit.cover,
-                            width: 100,
-                            height: 100,
-                          ),
-                          bigText: 'Salvador',
-                          smallText: 'Brazil',
-                        ),
-                        FirstPageListile(
-                          image: Image.asset(
-                            'images/pexels-ylanite-koppens-1906435.jpg',
-                            fit: BoxFit.cover,
-                            width: 100,
-                            height: 100,
-                          ),
-                          bigText: 'Salvador',
-                          smallText: 'Brazil',
-                        ),
-                        FirstPageListile(
-                          image: Image.asset(
-                            'images/pexels-vo-thuy-tien-2536967.jpg',
-                            fit: BoxFit.cover,
-                            width: 100,
-                            height: 100,
-                          ),
-                          bigText: 'Salvador',
-                          smallText: 'Brazil',
-                        ),
-                        FirstPageListile(
-                          image: Image.asset(
-                            'images/pexels-ylanite-koppens-1906435.jpg',
-                            fit: BoxFit.cover,
-                            width: 100,
-                            height: 100,
-                          ),
-                          bigText: 'Salvador',
-                          smallText: 'Brazil',
-                        ),
-                      ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 5,
+                    ),
+                    child: Text(
+                      'Valleys',
+                      style: TextStyle(fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 5,
+                    ),
+                    child: Text(
+                      'Ravines',
+                      style: TextStyle(fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 5,
+                    ),
+                    child: Text(
+                      'Streams',
+                      style: TextStyle(fontWeight: FontWeight.w900),
                     ),
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+
+              child: Row(
+                children: [
+                  FirstPageCard(
+                    image: 'pexels-trang-doan-1092730.jpg',
+                    bigText: 'La Casta',
+                    smallText: 'Peru, South America',
+                  ),
+                  FirstPageCard(
+                    image: 'pexels-vo-thuy-tien-2536967.jpg',
+                    bigText: 'Rio De Janiero',
+                    smallText: 'Brazil, South America',
+                  ),
+                  FirstPageCard(
+                    image: 'pexels-william-choquette-2641886.jpg',
+                    bigText: 'Rio De Janiero',
+                    smallText: 'Brazil, South America',
+                  ),
+                  FirstPageCard(
+                    image: 'pexels-ylanite-koppens-1906435.jpg',
+                    bigText: 'Rio De Janiero',
+                    smallText: 'Brazil, South America',
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Top Decoration',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                      Container(child: Icon(Icons.message)),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 100,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    // physics: NeverScrollableScrollPhysics(),
+                    itemCount: _firstTileDetails.length,
+                    itemBuilder: (context, index) {
+                      return FirstPageListile(
+                        image: Image.asset(_firstTileDetails[index]),
+                        bigText: 'Sao Paulo',
+                        smallText: 'Brazil',
+                      );
+                      // return Text(_firstTileDetails[index]);
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: CurvedNavigationBar(
